@@ -16,7 +16,7 @@ for(let i = 1; i < arr.length; i++){
         '<img src=' + image + ' alt="IMG" class="image">',
         '<a href = ' + url + '>',
         '<div class="overlay">',
-        '<div class="text">' + title + '</div>',
+        '<div class = "text">' + title + ' </div>',
         '</div>',
         '</a>',
         '</div>'
@@ -83,11 +83,37 @@ document.getElementById("outcontainer").innerHTML = chtml;
 //     return tokens.join('');
 // }
 
+document.getElementById("imgpage2").style.display = 'none';
+
+//var x = ;
+//x.style.display = 'block';
+
+function togglegrid()
+{   
+    //alert("he");
+    if(document.getElementById("imgpage1").style.display === 'none')
+    {
+        document.getElementById("imgpage1").style.display = 'block';
+        document.getElementById("imgpage2").style.display = 'none';   
+    }
+}
+
+function togglecarousel()
+{
+    //alert("carousel");
+    if(document.getElementById("imgpage2").style.display === 'none')
+    {
+        document.getElementById("imgpage2").style.display = 'block';
+        document.getElementById("imgpage1").style.display = 'none';   
+    }
+}
+
 function func()
 {
     document.getElementById("outcontainer").innerHTML = "";
+    document.getElementById("carousel-inner").innerHTML = "";
     //
-    console.log("hello");
+    //console.log("hello");
     let x = document.getElementById("searchbox").value;
     //alert(x);
 
@@ -110,7 +136,7 @@ function func()
       
     // const result = fuse.search(x);
     // alert(result);
-
+    let counter = 0;
     for(let i = 1; i < arr.length; i++)
     {
         var y = arr[i].data.title;
@@ -131,6 +157,9 @@ function func()
 
         else
         {
+            
+            counter = counter + 1;
+            //alert(counter);
             var html = [
                         '<div class="container">',
                         '<img src=' + image + ' alt="IMG" class="image">',
@@ -142,6 +171,25 @@ function func()
                         '</div>'
                         
                     ].join('\n');
+
+                if(counter === 1)
+                {
+                var html2 = [ 
+                        '<div class="carousel-item active" >',
+                                '<img src="' + image + '" class="d-block w-100 " alt="..." >', 
+                              '</div>'].join('\n');
+                
+                    document.getElementById("carousel-inner").insertAdjacentHTML('afterbegin', html2);
+                }
+                else{
+                    //alert(counter);
+                    var html2 = [ 
+                        '<div class="carousel-item" >',
+                                '<img src="' + image + '" class="d-block w-100 " alt="..." >', 
+                              '</div>'].join('\n');
+                
+                    document.getElementById("carousel-inner").insertAdjacentHTML('beforeend', html2);
+                }
                 
                     document.getElementById("outcontainer").insertAdjacentHTML('afterbegin', html);
         }
@@ -245,6 +293,35 @@ function func()
 
 document.getElementById("bttn").addEventListener("click", func);
 //document.getElementById("frm1").addEventListener("submit", func);
+html = [
+    '<div class="carousel-item active">',
+            '<img src="' + arr[1].data.thumbnail + '" class="d-block w-100" alt="...">', 
+          '</div>'].join('\n');
+
+document.getElementById("carousel-inner").insertAdjacentHTML('afterbegin', html);
+
+for(let i = 2; i < arr.length; i++)
+    {
+        var y = arr[i].data.title;
+        var image = arr[i].data.thumbnail;
+        var title = y.toString();
+
+        html = [ 
+        '<div class="carousel-item" >',
+                '<img src="' + image + '" class="d-block w-100 " alt="..." >', 
+              '</div>'].join('\n');
+
+    document.getElementById("carousel-inner").insertAdjacentHTML('beforeend', html);
+
+    }
+
+
+document.getElementById("togglecarouselid").addEventListener("click", togglecarousel);
+
+
+document.getElementById("togglegridid").addEventListener("click", togglegrid);
+
+
 
 
 // let slideIndex = 1;
@@ -276,4 +353,4 @@ document.getElementById("bttn").addEventListener("click", func);
 //   dots[slideIndex-1].className += " active";
 // }
 
-//window.onload = func;
+// //window.onload = func;
