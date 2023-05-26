@@ -1,0 +1,288 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+.top{
+    height: 100vh;
+    width: 100%;
+    background-image: url(images/bg2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+.redlogo{
+    height: 50px;
+}
+
+.redlogo img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.redlogo img:hover{
+    transform: scale(1.2);
+    transition: .4s;
+    cursor: pointer;
+}
+
+.btn{
+    background-color: orangered;
+    color: antiquewhite;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: larger;
+    padding: 10px    25px;
+    border-radius: 30px;
+    transition: transform .4s;
+}
+
+.btn:hover{
+    transform: scale(1.2);
+}
+
+.user{
+    font-size: 30px;
+    color: white;
+    transition: transform .4s;
+}
+
+.user:hover{
+    transform: scale(1.2);
+}
+#user2{
+    color: orangered;
+}
+
+.content{
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: antiquewhite;
+    text-decoration: none;
+    text-align: center;
+}
+
+.newsletter form{
+    width: 500px;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.newsletter form input:first-child{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    border: 2px solid orangered;
+    padding-left: 15px;
+    outline: none;
+    border-radius: 30px;
+    margin-bottom: 8px;
+    font-size: medium;
+    transition: transform .4s;
+}
+
+.newsletter form input:first-child:hover{
+    transform: scale(1.05);
+}
+
+.newsletter form input:last-child{
+    display:flex;
+    height: 40px;
+    width: 100%;
+    background-color: orangered;
+    font-size: large;
+    color: antiquewhite;
+    outline: none;
+    border: none;
+    text-align: center;
+    justify-content: center;
+    border-radius: 30px;
+
+}
+
+.newsletter form input:last-child:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#bttn{
+    width: 100%;
+    height: 40px;
+    background-color: orangered;
+    color: antiquewhite;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: larger;
+    align-items: center;
+    border-radius: 30px;
+    transition: transform .4s;
+}
+
+#bttn:hover{
+    transform: scale(1.05);
+}
+
+.imgpage{
+    
+    height: auto;
+    width: 100%;
+    padding: 100px 0px;
+    background-color: #1c2023;   
+    
+}
+
+.container {
+    position: relative;
+    width: 24%;
+    padding: 5px;
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #c44e00;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+
+  }
+  
+  .container:hover .overlay {
+    height: 100%;
+  }
+  
+  .text {
+    word-wrap: break-word;
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow-wrap: break-word;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  .outcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
+
+  * {box-sizing:border-box}
+
+/* Slideshow container */
+
+.slideshow-container {
+
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
